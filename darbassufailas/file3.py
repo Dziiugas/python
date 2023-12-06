@@ -7,6 +7,10 @@ def kuriam():
         f.write('10 25 14 25 47 36\n')
         f.write('1 5 4 8\n')
         f.write('5 8 7 6 9 5 44 1 2 5\n')
+        f.write('\n')
+        f.write('\n')
+        f.write('\n')
+        f.write('5 8 7 6 9 5 44 1 2 51111111111111111111111\n')
 def skaitom():
     with open('data3.txt','r',encoding='utf-8') as f:
         txt = []
@@ -22,7 +26,8 @@ visas = skaitom()
 print(visas)
 skaiciai = []
 for eil in visas:
-    eilsk = [int(x) for x in eil.split(' ')]
-    skaiciai.append(eilsk)
+    eilsk = [int(x) for x in eil.split(' ') if x !='\n' ]
+    if len(eilsk) > 0:
+        skaiciai.append(eilsk)
 print(skaiciai)
 print(skaiciai[0])
